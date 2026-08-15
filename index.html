@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth scroll-pt-24">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silver Blossoms - Feinster Vintage Rock & Cover-Klassiker</title>
+    
+    <!-- Tailwind CSS für das Layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome für Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Permanent Marker, Bebas Neue, Cinzel & Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@600;800&family=Permanent+Marker&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Konfiguration für Tailwind: Silver Blossoms Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'rock': ['"Permanent Marker"', 'cursive'],
+                        'banner': ['"Bebas Neue"', 'sans-serif'],
+                        'sub': ['"Cinzel"', 'serif'],
+                        'body': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        silvershimmer: '#e2e8f0',
+                        silvermuted: '#94a3b8',
+                        silverdark: '#475569',
+                        silverglow: '#cbd5e1'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Silbrige Rock-Boxen mit sattem Kanten-Schatten */
+        .rock-box {
+            box-shadow: 6px 6px 0px #94a3b8;
+            transition: all 0.3s ease;
+        }
+        .rock-box:hover {
+            box-shadow: 2px 2px 0px #cbd5e1;
+            transform: translate(4px, 4px);
+        }
+
+        /* Silver Glow Logo Styling */
+        .logo-font-style {
+            color: #ffffff;
+            -webkit-text-stroke: 2px #94a3b8;
+            paint-order: stroke fill;
+            text-shadow: 3px 3px 0px #09090b, 0 0 15px rgba(226, 232, 240, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .logo-font-style {
+                -webkit-text-stroke: 1.5px #94a3b8;
+            }
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-body selection:bg-slate-300 selection:text-zinc-950">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 border-b-4 border-transparent">
+        <div class="max-w-6xl mx-auto px-4 md:px-8 flex justify-between items-center relative">
+            
+            <a href="#home" class="text-3xl md:text-4xl font-rock tracking-widest text-white hover:text-silverglow transition-colors z-20 logo-font-style">
+                SILVER BLOSSOMS
+            </a>
+            
+            <!-- Desktop Menü -->
+            <div class="hidden md:flex space-x-6 lg:space-x-8 uppercase tracking-widest z-20 font-banner text-2xl mt-2">
+                <a href="#about" class="hover:text-silverglow transition-colors">Die Truppe</a>
+                <a href="#live" class="hover:text-silverglow transition-colors">Gigs</a>
+                <a href="#setlist" class="hover:text-silverglow transition-colors">Setlist</a>
+                <a href="#merch" class="hover:text-silverglow transition-colors">Merch</a>
+                <a href="#booking" class="hover:text-silverglow transition-colors">Booking</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-3xl text-white hover:text-silverglow transition-colors z-20">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menü -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-zinc-950 border-b-4 border-silvermuted shadow-2xl flex flex-col text-center uppercase tracking-widest font-bold text-2xl font-banner">
+            <a href="#about" class="py-4 border-b border-zinc-800 hover:text-silverglow hover:bg-zinc-900 transition-colors mobile-link">Die Truppe</a>
+            <a href="#live" class="py-4 border-b border-zinc-800 hover:text-silverglow hover:bg-zinc-900 transition-colors mobile-link">Gigs</a>
+            <a href="#setlist" class="py-4 border-b border-zinc-800 hover:text-silverglow hover:bg-zinc-900 transition-colors mobile-link">Setlist</a>
+            <a href="#merch" class="py-4 border-b border-zinc-800 hover:text-silverglow hover:bg-zinc-900 transition-colors mobile-link">Merch</a>
+            <a href="#booking" class="py-4 hover:text-silverglow hover:bg-zinc-900 transition-colors mobile-link">Booking</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 px-4 bg-zinc-900 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('Hintergrund.jpg')] bg-cover bg-center bg-no-repeat z-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-zinc-900/60 via-zinc-950/85 to-black z-0"></div>
+        
+        <div class="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center text-center">
+            
+            <div class="border-4 border-zinc-200 rock-box p-3 md:p-4 bg-zinc-950/90 w-full mt-4 md:mt-8 mb-4 md:mb-6 flex flex-col items-center relative z-10">
+                <h1 class="sr-only">SILVER BLOSSOMS</h1>
+                <img src="silver_blossoms_start.jpg" alt="Silver Blossoms" class="w-full h-auto max-h-[60vh] md:max-h-[68vh] object-contain mx-auto">
+            </div>
+
+            <a href="#live" class="mt-2 md:mt-6 bg-zinc-200 text-zinc-950 px-8 py-3 md:px-10 md:py-4 font-bold uppercase tracking-widest text-lg md:text-2xl hover:bg-white transition-all border-4 border-zinc-400 hover:border-zinc-100 flex items-center space-x-3 font-banner shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                <span>Zu den Terminen</span>
+                <i class="fa-solid fa-chevron-down animate-bounce text-lg"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Die Band Section -->
+    <section id="about" class="py-20 md:py-24 px-4 md:px-8 bg-zinc-950 border-t-4 border-silvermuted relative">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-7xl text-center mb-16 md:mb-20 font-rock tracking-widest logo-font-style">
+                DIE TRUPPE
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                <!-- Mitglied 1: Uli -->
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-36 h-36 md:w-44 md:h-44 mb-6 border-4 border-zinc-200 rock-box bg-zinc-900 flex items-center justify-center overflow-hidden">
+                        <img src="Uli.jpg" alt="Uli" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                    </div>
+                    <h3 class="text-3xl md:text-4xl mb-2 text-zinc-100 font-rock tracking-wide">Uli</h3>
+                    <div class="bg-zinc-200 text-zinc-950 px-3 py-1 font-bold uppercase tracking-widest mb-3 transform -rotate-2 font-banner text-lg border border-zinc-400">Gesang & Harp</div>
+                    <p class="text-zinc-400 leading-relaxed text-xs md:text-sm">Die Rock-Röhre vorne am Brett. Pustet nebenbei noch die Mundharmonika durch die Decke.</p>
+                </div>
+
+                <!-- Mitglied 2: Aki -->
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-36 h-36 md:w-44 md:h-44 mb-6 border-4 border-zinc-200 rock-box bg-zinc-900 flex items-center justify-center overflow-hidden">
+                        <img src="Aky.jpg" alt="Aki" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                    </div>
+                    <h3 class="text-3xl md:text-4xl mb-2 text-zinc-100 font-rock tracking-wide">Aki</h3>
+                    <div class="bg-zinc-200 text-zinc-950 px-3 py-1 font-bold uppercase tracking-widest mb-3 transform rotate-1 font-banner text-lg border border-zinc-400">Gitarre & Gesang</div>
+                    <p class="text-zinc-400 leading-relaxed text-xs md:text-sm">Rhythmus-Maschine an sechs Saiten und schnappt sich regelmäßig das Mikro für fette Leadsongs.</p>
+                </div>
+
+                <!-- Mitglied 3: Günter -->
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-36 h-36 md:w-44 md:h-44 mb-6 border-4 border-zinc-200 rock-box bg-zinc-900 flex items-center justify-center overflow-hidden">
+                        <img src="Guenter.jpg" alt="Günter" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                    </div>
+                    <h3 class="text-3xl md:text-4xl mb-2 text-zinc-100 font-rock tracking-wide">Günter</h3>
+                    <div class="bg-zinc-200 text-zinc-950 px-3 py-1 font-bold uppercase tracking-widest mb-3 transform -rotate-2 font-banner text-lg border border-zinc-400">Lead-Gitarre</div>
+                    <p class="text-zinc-400 leading-relaxed text-xs md:text-sm">Der Solo-Hexer. Feuert Riffs ab, bei denen die Saiten glühen und das Bier schäumt.</p>
+                </div>
+
+                <!-- Mitglied 4: Achim -->
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-36 h-36 md:w-44 md:h-44 mb-6 border-4 border-zinc-200 rock-box bg-zinc-900 flex items-center justify-center overflow-hidden">
+                        <img src="Achim.jpg" alt="Achim" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                    </div>
+                    <h3 class="text-3xl md:text-4xl mb-2 text-zinc-100 font-rock tracking-wide">Achim</h3>
+                    <div class="bg-zinc-200 text-zinc-950 px-3 py-1 font-bold uppercase tracking-widest mb-3 transform rotate-2 font-banner text-lg border border-zinc-400">Bass</div>
+                    <p class="text-zinc-400 leading-relaxed text-xs md:text-sm">Der Mann für den Tiefdruck. Massiert euch den Bass direkt in die Magengrube.</p>
+                </div>
+
+                <!-- Mitglied 5: Wolfgang -->
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-36 h-36 md:w-44 md:h-44 mb-6 border-4 border-zinc-200 rock-box bg-zinc-900 flex items-center justify-center overflow-hidden">
+                        <img src="Wolfgang.jpg" alt="Wolfgang" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                    </div>
+                    <h3 class="text-3xl md:text-4xl mb-2 text-zinc-100 font-rock tracking-wide">Wolfgang</h3>
+                    <div class="bg-zinc-200 text-zinc-950 px-3 py-1 font-bold uppercase tracking-widest mb-3 transform -rotate-1 font-banner text-lg border border-zinc-400">Drums</div>
+                    <p class="text-zinc-400 leading-relaxed text-xs md:text-sm">Das menschliche Metronom. Hämmert die Felle windelweich, bis auch der Letzte mitnickt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE Section -->
+    <section id="live" class="py-20 md:py-24 px-4 md:px-8 bg-zinc-900 border-t-4 border-silvermuted relative">
+        <div class="max-w-5xl mx-auto relative z-10">
+            <h2 class="text-4xl md:text-7xl text-center mb-12 md:mb-16 font-rock tracking-widest logo-font-style">
+                TOUR & GIGS 2027
+            </h2>
+
+            <div class="bg-zinc-950 border-4 border-zinc-200 rock-box p-4 md:p-10">
+                <div class="flex flex-col space-y-4">
+                    
+                    <!-- Gig 1: Garage Club -->
+                    <div class="flex flex-col md:flex-row items-center justify-between border-b-2 border-zinc-800 pb-4 group hover:bg-zinc-900 transition-colors p-4">
+                        <div class="text-silverglow font-rock text-2xl md:text-3xl w-full md:w-48 text-center md:text-left mb-2 md:mb-0">17. APRIL <span class="text-lg text-zinc-500">(SA)</span></div>
+                        <div class="flex-1 text-center md:text-left">
+                            <div class="font-banner text-2xl md:text-4xl text-white tracking-wider">The Garage Rock Club</div>
+                            <div class="text-zinc-400 font-bold uppercase tracking-widest text-sm">
+                                <i class="fa-solid fa-location-dot text-silvermuted mr-2"></i>Köln
+                                <span class="mx-2 hidden sm:inline">|</span><br class="sm:hidden"> 
+                                <i class="fa-regular fa-clock text-silvermuted mr-2 mt-1 sm:mt-0"></i>20:30 Uhr
+                            </div>
+                        </div>
+                        <a href="#booking" class="mt-4 md:mt-0 border-2 border-zinc-300 text-zinc-200 hover:bg-zinc-200 hover:text-zinc-950 px-6 py-2 font-banner text-xl transition-colors">Details</a>
+                    </div>
+
+                    <!-- Gig 2: Hafenschuppen -->
+                    <div class="flex flex-col md:flex-row items-center justify-between border-b-2 border-zinc-800 pb-4 group hover:bg-zinc-900 transition-colors p-4">
+                        <div class="text-silverglow font-rock text-2xl md:text-3xl w-full md:w-48 text-center md:text-left mb-2 md:mb-0">15. MAI <span class="text-lg text-zinc-500">(SA)</span></div>
+                        <div class="flex-1 text-center md:text-left">
+                            <div class="font-banner text-2xl md:text-4xl text-white tracking-wider">Alte Schlosserei Open Air</div>
+                            <div class="text-zinc-400 font-bold uppercase tracking-widest text-sm">
+                                <i class="fa-solid fa-location-dot text-silvermuted mr-2"></i>Düsseldorf
+                                <span class="mx-2 hidden sm:inline">|</span><br class="sm:hidden"> 
+                                <i class="fa-regular fa-clock text-silvermuted mr-2 mt-1 sm:mt-0"></i>19:00 Uhr
+                            </div>
+                        </div>
+                        <a href="#booking" class="mt-4 md:mt-0 border-2 border-zinc-300 text-zinc-200 hover:bg-zinc-200 hover:text-zinc-950 px-6 py-2 font-banner text-xl transition-colors">Details</a>
+                    </div>
+
+                    <!-- Gig 3: Pumpenfest -->
+                    <div class="flex flex-col md:flex-row items-center justify-between border-b-2 border-zinc-800 pb-4 group hover:bg-zinc-900 transition-colors p-4 bg-zinc-900/50">
+                        <div class="text-silverglow font-rock text-2xl md:text-3xl w-full md:w-48 text-center md:text-left mb-2 md:mb-0">10. JULI <span class="text-lg text-zinc-500">(SA)</span></div>
+                        <div class="flex-1 text-center md:text-left">
+                            <div class="font-banner text-2xl md:text-4xl text-white tracking-wider">Pumpenfest <span class="text-zinc-400 text-xl md:text-2xl ml-2">- Festival Stage</span></div>
+                            <div class="text-zinc-400 font-bold uppercase tracking-widest text-sm">
+                                <i class="fa-solid fa-location-dot text-silvermuted mr-2"></i>Open Air Festwiese
+                                <span class="mx-2 hidden sm:inline">|</span><br class="sm:hidden"> 
+                                <i class="fa-regular fa-clock text-silvermuted mr-2 mt-1 sm:mt-0"></i>19:30 Uhr
+                            </div>
+                        </div>
+                        <a href="#booking" class="mt-4 md:mt-0 border-2 border-zinc-300 text-zinc-200 hover:bg-zinc-200 hover:text-zinc-950 px-6 py-2 font-banner text-xl transition-colors">Headliner</a>
+                    </div>
+
+                    <!-- Gig 4: Brauhaus Rock -->
+                    <div class="flex flex-col md:flex-row items-center justify-between border-b-2 border-zinc-800 pb-4 group hover:bg-zinc-900 transition-colors p-4">
+                        <div class="text-silverglow font-rock text-2xl md:text-3xl w-full md:w-48 text-center md:text-left mb-2 md:mb-0">07. AUGUST <span class="text-lg text-zinc-500">(SA)</span></div>
+                        <div class="flex-1 text-center md:text-left">
+                            <div class="font-banner text-2xl md:text-4xl text-white tracking-wider">Biergarten & Rock Nacht</div>
+                            <div class="text-zinc-400 font-bold uppercase tracking-widest text-sm">
+                                <i class="fa-solid fa-location-dot text-silvermuted mr-2"></i>Leverkusen
+                                <span class="mx-2 hidden sm:inline">|</span><br class="sm:hidden"> 
+                                <i class="fa-regular fa-clock text-silvermuted mr-2 mt-1 sm:mt-0"></i>18:00 Uhr
+                            </div>
+                        </div>
+                        <a href="#booking" class="mt-4 md:mt-0 border-2 border-zinc-300 text-zinc-200 hover:bg-zinc-200 hover:text-zinc-950 px-6 py-2 font-banner text-xl transition-colors">Details</a>
+                    </div>
+
+                    <!-- Gig 5: Kesselhaus -->
+                    <div class="flex flex-col md:flex-row items-center justify-between group hover:bg-zinc-900 transition-colors p-4">
+                        <div class="text-silverglow font-rock text-2xl md:text-3xl w-full md:w-48 text-center md:text-left mb-2 md:mb-0">25. SEPT <span class="text-lg text-zinc-500">(SA)</span></div>
+                        <div class="flex-1 text-center md:text-left">
+                            <div class="font-banner text-2xl md:text-4xl text-white tracking-wider">Kesselhaus Rocktober</div>
+                            <div class="text-zinc-400 font-bold uppercase tracking-widest text-sm">
+                                <i class="fa-solid fa-location-dot text-silvermuted mr-2"></i>Solingen
+                                <span class="mx-2 hidden sm:inline">|</span><br class="sm:hidden"> 
+                                <i class="fa-regular fa-clock text-silvermuted mr-2 mt-1 sm:mt-0"></i>21:00 Uhr
+                            </div>
+                        </div>
+                        <a href="#booking" class="mt-4 md:mt-0 border-2 border-zinc-300 text-zinc-200 hover:bg-zinc-200 hover:text-zinc-950 px-6 py-2 font-banner text-xl transition-colors">Details</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setlist Section -->
+    <section id="setlist" class="py-20 md:py-24 px-4 md:px-8 bg-zinc-950 border-t-4 border-silvermuted relative">
+        <div class="max-w-6xl mx-auto relative z-10">
+            <h2 class="text-4xl md:text-7xl text-center mb-12 md:mb-16 font-rock tracking-widest logo-font-style">
+                WAS WIR RAUSHAUEN
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- SET 1 -->
+                <div class="bg-zinc-900 border-4 border-zinc-200 rock-box p-6 md:p-8">
+                    <div class="text-2xl md:text-3xl font-rock text-silverglow mb-6 pb-2 border-b-2 border-zinc-700 flex justify-between items-center">
+                        <span>SET 1</span>
+                        <span class="text-xs uppercase font-banner tracking-widest text-zinc-400">Runde Eins</span>
+                    </div>
+                    <ul class="space-y-3 font-banner uppercase tracking-wider text-lg md:text-xl">
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">01.</span>
+                            <span>The Passenger</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">02.</span>
+                            <span>Runaway Train</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">03.</span>
+                            <span>Use Somebody</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">04.</span>
+                            <span>Mrs. Robinson</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">05.</span>
+                            <span>The River</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">06.</span>
+                            <span>Losing My Religion</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">07.</span>
+                            <span>Creep</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">08.</span>
+                            <span>White Wedding</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">09.</span>
+                            <span>Have You Ever Seen The Rain</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">10.</span>
+                            <span>Rockin' All Over The World</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">11.</span>
+                            <span>I'm A Believer</span>
+                        </li>
+                        <li class="flex items-center space-x-3 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">12.</span>
+                            <span>Sultans Of Swing</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- SET 2 -->
+                <div class="bg-zinc-900 border-4 border-zinc-200 rock-box p-6 md:p-8">
+                    <div class="text-2xl md:text-3xl font-rock text-silverglow mb-6 pb-2 border-b-2 border-zinc-700 flex justify-between items-center">
+                        <span>SET 2</span>
+                        <span class="text-xs uppercase font-banner tracking-widest text-zinc-400">Finale</span>
+                    </div>
+                    <ul class="space-y-3 font-banner uppercase tracking-wider text-lg md:text-xl">
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">13.</span>
+                            <span>Born To Be Wild</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">14.</span>
+                            <span>Road To Hell</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">15.</span>
+                            <span>Paint It Black</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">16.</span>
+                            <span>Louie Louie</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">17.</span>
+                            <span>Mein Ding</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">18.</span>
+                            <span>Bad Moon Rising</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">19.</span>
+                            <span>Whatever You Want</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">20.</span>
+                            <span>Sex On Fire</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">21.</span>
+                            <span>Ein Kompliment</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">22.</span>
+                            <span>Narcotic</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">23.</span>
+                            <span>Dance With Somebody</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">24.</span>
+                            <span>Sweet Caroline</span>
+                        </li>
+                        <li class="flex items-center space-x-3 border-b border-zinc-800 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">25.</span>
+                            <span>I Still Haven't Found</span>
+                        </li>
+                        <li class="flex items-center space-x-3 pb-2 hover:text-silverglow transition-colors">
+                            <span class="text-silvermuted font-rock text-sm w-6 text-right">26.</span>
+                            <span>Tage Wie Diese</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Merch Section -->
+    <section id="merch" class="py-20 md:py-24 px-4 md:px-8 bg-zinc-900 border-t-4 border-silvermuted relative">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-7xl text-center mb-16 md:mb-20 font-rock tracking-widest logo-font-style">
+                BAND MERCH
+            </h2>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
+                <div class="w-full md:w-1/2 max-w-md border-4 border-zinc-200 rock-box bg-zinc-950 p-6 flex items-center justify-center relative group">
+                    <img src="silver_blossoms_shirt.jpg" alt="Silver Blossoms T-Shirt" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute -top-6 -left-6 bg-zinc-100 text-zinc-950 font-rock text-3xl px-6 py-2 transform -rotate-12 border-2 border-zinc-950 shadow-[4px_4px_0px_#94a3b8]">FETT!</div>
+                </div>
+
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h3 class="text-3xl md:text-5xl text-white font-rock mb-4">Das Offizielle Band-Shirt</h3>
+                    <p class="text-zinc-400 text-lg md:text-xl mb-6">Zieht euch den handgemachten Rock 'n' Roll an! Feiner Silber-Print auf pechschwarzem Stoff – gebaut für den Moshpit, den Kneipenabend oder die Garage.</p>
+                    
+                    <div class="text-5xl md:text-6xl font-rock text-silverglow mb-8">29,00 €</div>
+                    
+                    <a href="#booking" class="inline-block w-full md:w-auto text-center bg-zinc-100 text-zinc-950 font-banner font-bold uppercase tracking-widest text-2xl md:text-3xl py-4 px-8 rock-box hover:bg-zinc-300 transition-colors border-4 border-zinc-950">
+                        Shirt Sichern
+                    </a>
+                    <p class="text-sm text-zinc-500 mt-4 font-bold tracking-wider">(Einfach unten im Kontaktfeld eure Wunschgröße angeben!)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking / Contact Section -->
+    <section id="booking" class="py-20 md:py-24 px-4 md:px-8 bg-zinc-950 border-t-4 border-silvermuted">
+        <div class="max-w-6xl mx-auto border-4 border-zinc-200 rock-box bg-zinc-950 overflow-hidden flex flex-col md:flex-row">
+            
+            <div class="p-6 md:p-16 flex-1 flex flex-col justify-center bg-zinc-950">
+                <h2 class="text-4xl md:text-7xl mb-6 md:mb-8 font-rock tracking-widest logo-font-style">
+                    HOLT UNS AUF DIE BÜHNE!
+                </h2>
+                <p class="text-zinc-400 mb-8 md:mb-10 text-lg md:text-xl">
+                    Kneipengig, Stadtfest oder wilde Gartenparty? Schreibt uns 'ne Zeile, stellt das Bier kalt und wir bringen die Verstärker zum Glühen.
+                </p>
+                
+                <div class="space-y-6 md:space-y-8 font-banner text-2xl tracking-wider">
+                    <div class="flex items-center space-x-4 md:space-x-6">
+                        <i class="fa-solid fa-envelope text-3xl md:text-4xl text-silvermuted"></i>
+                        <div>
+                            <div class="text-sm md:text-lg text-zinc-500 font-bold uppercase tracking-widest">Direktkontakt</div>
+                            <a href="mailto:booking@silverblossoms.de" class="text-xl sm:text-2xl md:text-3xl font-bold hover:text-silverglow transition-colors break-all text-white">booking@silverblossoms.de</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-6 md:p-16 flex-1 border-t-4 md:border-t-0 md:border-l-4 border-zinc-200 bg-zinc-900">
+                <form class="space-y-4 md:space-y-6" onsubmit="event.preventDefault(); alert('Nachricht ist raus! Wir melden uns bei dir!');">
+                    <div>
+                        <label class="block text-xl md:text-2xl font-banner font-bold text-zinc-100 mb-2 uppercase tracking-wide">Dein Name</label>
+                        <input type="text" class="w-full bg-zinc-950 border-2 border-zinc-700 p-3 md:p-4 text-white text-base md:text-lg focus:outline-none focus:border-zinc-300 transition-colors" placeholder="Wie heißt du?" required>
+                    </div>
+                    <div>
+                        <label class="block text-xl md:text-2xl font-banner font-bold text-zinc-100 mb-2 uppercase tracking-wide">Deine E-Mail</label>
+                        <input type="email" class="w-full bg-zinc-950 border-2 border-zinc-700 p-3 md:p-4 text-white text-base md:text-lg focus:outline-none focus:border-zinc-300 transition-colors" placeholder="wohin_geht_die_post@mail.de" required>
+                    </div>
+                    <div>
+                        <label class="block text-xl md:text-2xl font-banner font-bold text-zinc-100 mb-2 uppercase tracking-wide">Nachricht / Anfrage</label>
+                        <textarea rows="4" class="w-full bg-zinc-950 border-2 border-zinc-700 p-3 md:p-4 text-white text-base md:text-lg focus:outline-none focus:border-zinc-300 transition-colors resize-none" placeholder="Hau in die Tasten... Gig-Anfrage, Grüße oder Shirt-Bestellung inklusive Größe!" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-zinc-100 text-zinc-950 font-banner font-bold uppercase tracking-widest text-2xl md:text-4xl py-3 md:py-4 rock-box hover:bg-zinc-300 transition-colors border-4 border-zinc-950">
+                        AB DAFÜR!
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 md:py-12 px-4 md:px-8 border-t-8 border-silvermuted text-center md:text-left">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl md:text-4xl font-rock tracking-widest text-zinc-400 hover:text-white transition-colors cursor-pointer" onclick="window.scrollTo(0,0)">
+                SILVER BLOSSOMS
+            </div>
+            
+            <div class="flex space-x-6 md:space-x-8">
+                <a href="#" class="text-zinc-400 hover:text-white transition-colors text-2xl md:text-4xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text-zinc-400 hover:text-white transition-colors text-2xl md:text-4xl"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            
+            <div class="text-sm md:text-xl text-zinc-500 font-banner tracking-wider">
+                &copy; 2027 Silver Blossoms | <a href="#" class="hover:text-white transition-colors">Impressum</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Skripte für Navigation -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-zinc-950', 'border-silvermuted', 'shadow-2xl');
+                navbar.classList.remove('bg-transparent', 'border-transparent');
+            } else {
+                navbar.classList.add('bg-transparent', 'border-transparent');
+                navbar.classList.remove('bg-zinc-950', 'border-silvermuted', 'shadow-2xl');
+            }
+        });
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
